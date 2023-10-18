@@ -7,14 +7,14 @@ def calcular_Gx(I, Gx, M, N):
     for i in range(1, M - 2):
         for j in range(1, N - 2):
             value = (I[i + 1, j - 1] + I[i + 1, j] + I[i + 1, j + 1]) - (I[i - 1, j - 1] + I[i - 1, j] + I[i - 1, j + 1])
-            Gx[i, j] = np.clip(value, 0, 255)  # Saturação
+            Gx[i, j] = np.clip(value, 0, 255)  # Saturação para deixar os valores no intervalo de 0 a 255
 
 
 def calcular_Gy(I, Gy, M, N):
     for i in range(1, M - 2):
         for j in range(1, N - 2):
             value = (I[i - 1, j + 1] + I[i, j + 1] + I[i + 1, j + 1]) - (I[i - 1, j - 1] + I[i, j - 1] + I[i + 1, j - 1])
-            Gy[i, j] = np.clip(value, 0, 255) 
+            Gy[i, j] = np.clip(value, 0, 255) # Saturação para deixar os valores no intervalo de 0 a 255
 
 
 def main():
